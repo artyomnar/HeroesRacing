@@ -13,6 +13,11 @@ public class Player {
     public static final int maxBottom = 460;
 
     Image img = new ImageIcon("res/IM-Model2.png").getImage();
+
+    public Rectangle getRect(){
+        return new Rectangle(x, y, 300, 200);
+    }
+
     int speed = 0;
     int boost = 0; //ускорение
     int pathway = 0; //путь
@@ -21,7 +26,6 @@ public class Player {
     int dy = 0;
     int layer1 = 0; //слой
     int layer2 = 1300;
-
 
     public void move(){
         pathway += speed;
