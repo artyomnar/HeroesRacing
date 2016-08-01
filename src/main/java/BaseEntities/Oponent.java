@@ -12,10 +12,9 @@ public class Oponent {
     int speed;
     Background background;
     Image img = new ImageIcon("res/GG-Model2.png").getImage();
-    //Image img2 = new ImageIcon("res/S-Model2.png").getImage();
 
     public Rectangle getRect(){
-        return new Rectangle(x, y, 300, 215);
+        return new Rectangle(x, y, 200, 115);
     }
 
     public Oponent (int x, int y, int speed, Background background){

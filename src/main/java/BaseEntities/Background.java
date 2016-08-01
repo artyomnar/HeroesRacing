@@ -28,7 +28,7 @@ public class Background extends JPanel implements ActionListener, Runnable{
         while (true){
             Random rand = new Random();
             try {
-                Thread.sleep(rand.nextInt(2000));
+                Thread.sleep(rand.nextInt(3000));
                 oponentList.add(new Oponent(1300,rand.nextInt(600),rand.nextInt(50),this));
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -73,6 +73,7 @@ public class Background extends JPanel implements ActionListener, Runnable{
         p.move();
         repaint();// paint вызывает
         testCrush();
+        finish();
     }
 
     private void testCrush(){
@@ -80,14 +81,19 @@ public class Background extends JPanel implements ActionListener, Runnable{
         while (i.hasNext()){
             Oponent e = i.next();
             if (p.getRect().intersects(e.getRect())){
-                JOptionPane.showMessageDialog(null,"You lose!");
+                JOptionPane.showMessageDialog(null,"You lose! :(");
                 System.exit(1);
                 //i.remove();// при столкновении уничтожаем врага
             }
-
         }
     }
 
+    private void finish(){
+        if (p.pathway > 100000){
+            JOptionPane.showMessageDialog(null,"You win! :)");
+            System.exit(0);
+        }
+    }
 }
 
 

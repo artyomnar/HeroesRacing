@@ -15,7 +15,7 @@ public class Player {
     Image img = new ImageIcon("res/IM-Model2.png").getImage();
 
     public Rectangle getRect(){
-        return new Rectangle(x, y, 300, 200);
+        return new Rectangle(x, y, 230, 150);
     }
 
     int speed = 0;
@@ -68,6 +68,5 @@ public class Player {
         if (key == KeyEvent.VK_UP || key == KeyEvent.VK_DOWN){
             dy = 0;
         }
-
     }
 }
